@@ -1,5 +1,8 @@
-* {
+*, body {
     margin: 0;
     /* color: white; */
-    /* background: rgb(215, 242, 215); */
+    background: rgb(175, 233, 175);
+}
+h3{
+    color: blue;
 }
