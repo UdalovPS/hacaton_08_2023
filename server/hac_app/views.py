@@ -88,3 +88,13 @@ class SimplePageView(APIView):
 
     def get(self, request: Request) -> Response:
         return Response()
+
+
+class OneStringView(APIView):
+    def post(self, request: Request) -> Response:
+        text = request.POST['textinput']
+        data = [{
+            'address': 'Ленина 8',
+            'value': 0.91
+        }]
+        return Response(data)
