@@ -17,4 +17,5 @@ urlpatterns = [
     path("form-and-chart/", FormAndChartView.as_view(), name='form-and-chart'),
     path("simple-page/", SimplePageView.as_view(), name='simple-page'),
     path("one-string/", OneStringView.as_view(), name='one-string'),
+    path("req-file/", ReqFileView.as_view(), name='one-string'),
 ]

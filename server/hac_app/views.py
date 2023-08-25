@@ -3,6 +3,8 @@ from rest_framework.response import Response
 from rest_framework.request import Request
 from rest_framework.views import APIView
 
+import csv
+
 
 class AboutView(APIView):
     renderer_classes = [TemplateHTMLRenderer, JSONRenderer]
@@ -92,11 +94,6 @@ class SimplePageView(APIView):
 
 class OneStringView(APIView):
     def post(self, request: Request) -> Response:
-        text = request.POST['textInput']
-        # data = [{
-        #     'address': 'Ленина 8',
-        #     'value': 0.91
-        # }]
         data = [
             {
               "address": "ул.Ленина, д. 25",
@@ -119,4 +116,15 @@ class OneStringView(APIView):
               "value": "0.77"
             }
         ]
+        return Response(data)
+
+
+class ReqFileView(APIView):
+    def post(self, request: Request) -> Response:
+        file = request.FILES['fileToUpload']
+        decoded_file = file.read().decode('utf-8').splitlines()
+        reader = csv.DictReader(decoded_file)
+        for row in reader:
+            print(row)
+        data = ['url will be here!!!']
         return Response(data)
