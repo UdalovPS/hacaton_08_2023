@@ -1,6 +1,6 @@
 {% load static %}
 
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,21 +37,28 @@
                     <h2>Кейс:</h2>
                     <p>При помощи методов искусственного интеллекта и данных, включающих полные адреса домов и зданий г. Санкт-Петербурга необходимо построить модель, которая сможет адаптироваться к задачам определения корректного адреса, содержащегося в исходной базе данных.</p>
                     <h3>Введите адрес</h3>
-                    <input class="form-control form-control-lg mt-3" type="text" name="textInput" autocomplete="off">
+                    <input class="form-control form-control-lg mt-3" type="text" name="textInput" >
                     <h3 class="mt20">Или выберите файл</h3>
-                    <input class="form-control form-control-lg mt-3" name="fileToUpload" id="fileToUpload" type="file" autocomplete="off">
+                    <input class="form-control form-control-lg mt-3" name="fileToUpload" id="fileToUpload" type="file" >
                     <button type="submit" class="btn btn-success btn-lg mt-3">Отправить</button>
+                    <!-- <input type="submit" value="Загрузить"> -->
                 </form>
             </div>
         </div>
 
         <div class="right">
-
         </div>
     </div>
+
+    <!-- -------------- output ----------- -->
     <div id="output">
         <h2>Output будет здесь:</h2>
-        <canvas id="bar-chart-horizontal"></canvas>
+        
+    </div>
+
+    <!-- -------- canvas для вывода графика ---------- -->
+    <div >
+        <canvas id="bar-chart-horizontal" class="mt50"></canvas>
 
     </div>
 
