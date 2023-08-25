@@ -93,8 +93,30 @@ class SimplePageView(APIView):
 class OneStringView(APIView):
     def post(self, request: Request) -> Response:
         text = request.POST['textInput']
-        data = [{
-            'address': 'Ленина 8',
-            'value': 0.91
-        }]
+        # data = [{
+        #     'address': 'Ленина 8',
+        #     'value': 0.91
+        # }]
+        data = [
+            {
+              "address": "ул.Ленина, д. 25",
+              "value": "0.45"
+            },
+            {
+              "address": "проспект Карла Маркса, д. 18 к. 2",
+              "value": "0.98"
+            },
+            {
+              "address": "Литейный бульвар, д. 15, стр. 5",
+              "value": "0.12"
+            },
+            {
+              "address": "Проспект Мира, д. 187",
+              "value": "0.25"
+            },
+            {
+              "address": "ул.Энгельса, д. 214",
+              "value": "0.77"
+            }
+        ]
         return Response(data)
