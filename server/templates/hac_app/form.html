@@ -1,3 +1,5 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +9,12 @@
 </head>
 <body>
     <form id="upload-form" enctype="multipart/form-data">
-        <input type="text" name="textInput" placeholder="Введите текст" autocomplete="off">
+        <input type="text" name="textInput" placeholder="Введите текст">
         <br><br>
-        <input type="file" name="fileToUpload" id="fileToUpload" autocomplete="off">
+        <input type="file" name="fileToUpload" id="fileToUpload">
         <input type="submit" value="Загрузить">
     </form>
     <div class="output" id="output"></div>
-    <script src="form.js"></script>
+    <script src='{% static "validation.js" %}'></script>
 </body>
 </html>

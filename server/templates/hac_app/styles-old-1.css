@@ -28,17 +28,18 @@ P{
 .main{
     display: flex;
     min-height: 50vh;
-    /* max-width: 80%; */
+   
 }
 .left{
-    width: 45%;
+    flex-basis: 700px;
+    
 }
 .form{
     background-color: #ffffff00;
     padding: 50px;
     border-radius: 10px;
     color: black;
-    width: 90%;
+    width: 80%;
     margin-left: 100px;
 }
 .right {
@@ -49,6 +50,7 @@ P{
     background-size: contain;
     background-size: 100% ;
     background-position: center;
+  
 
 }
 /* #bar-chart-horizontal{
@@ -69,8 +71,7 @@ P{
 
 #output{
     /* margin-left: 150px; */
-    padding-top: 30px;
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.807);
     max-width: 80%;
     margin: 0 auto;
     border-radius: 20px;
