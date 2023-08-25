@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let table = document.querySelector('.table');
 
     form.addEventListener('submit', async function(event) {
+     
         console.log('submit');
         event.preventDefault();
 
@@ -15,11 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const textInput = formData.get('textInput');
         if (textInput.trim().length < 4){
             console.error('запрос короче 4 символов');
-            table.textContent = 'Слишком короткий запрос, введите минимум 4 символа';
+          
         } else {
-            // console.log(formData.get('textInput'));  //выводит текст из текстового поля формы
-            // console.log(formData.get('fileToUpload')); // выводит файл, загруженный в форму
-       
+          
             // "/req-file/?format=json"
             // "/one-string/?format=json"
         try {

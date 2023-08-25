@@ -139,7 +139,7 @@ margin-top: 50px;
     gap: 25px;
 }
 .header__social{
-    margin-right: 70px;
+    margin-right: 70px;    
     display: flex;
     justify-content: flex-end;
     gap: 10px;
@@ -164,5 +164,6 @@ margin-top: 50px;
 }
 
 .active {
+    
     border-bottom: 2px solid #ffffff;
 }
