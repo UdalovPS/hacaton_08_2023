@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://kit.fontawesome.com/f262f24278.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">   
-    <link rel="stylesheet" href="./styles.css">
-
-
+    <link rel="stylesheet" href='{% static "styles.css" %}'>
     <title>Хакатон "Цифровой прорыв"</title>
 </head>
 <body>
@@ -18,95 +15,45 @@
   <div class="body">
          <!-- -------------- header ------------------ -->
 
-   <div class="header">
-    <div class="header__logo">Команда-2023</div>
-    <div class="header__nav nav">
-        <div class="header__nav-link"><a href="/case.html">Кейс</a></div>
-        <div class="header__nav-link "><a href="/main.html">О нас</a></div>
-        
-        <!-- <div class="header__nav-link"><a href="/chart.html">График</a></div> -->
-        <!-- <div class="header__nav-link"><a href="#">Решение</a></div>
-        <div class="header__nav-link"><a href="#">Портфолио</a></div> -->
-    </div>
-    <div class="header__social">
-        <div class="header__social_link"><a href="https://github.com/UdalovPS/hacaton_08_2023"><i class="fa-brands fa-github"></i></a></div>
-        <!-- <div class="header__social_link"><a href="#"><i class="fa-brands fa-twitter"></i></a></div> -->
-    </div>
-</div>
-
-   <!-- -------------- main ------------------ -->
-<div class="main">
-
-  
-   <!-- -------------- end of header ------------------ -->
-    <div class="left">
-        <div class="form">
-            <form action="">
-                <h2>Кейс:</h2>
-                <p>При помощи методов искусственного интеллекта и данных, включающих полные адреса домов и зданий г. Санкт-Петербурга необходимо построить модель, которая сможет адаптироваться к задачам определения корректного адреса, содержащегося в исходной базе данных.</p>
-                <h3>Введите адрес</h3>
-                <!-- <label for="name" class="form-label">Введите имя:</label> -->
-                <!-- <input type="text" name="name" value="" placeholder="Ваше имя" class="form-control form-control-lg mt-3" > -->
-    
-                <!-- <label for="email" class="form-label">Введите email:</label> -->
-                <!-- <input type="email" name="email" placeholder="Ваш email" class="form-control form-control-lg mt-3" > -->
-    <input class="form-control form-control-lg mt-3" type="text" name="address">
-                <!-- <textarea class="form-control form-control-lg mt-3" name="text" id="" cols="30" rows="5" placeholder="Введите название ОКС"></textarea> -->
-                <!-- <label for="file">Выберите файл:</label>
-                <input type="file" name="file" id="" class="form-control form-control-lg" > -->
-    <h3 class="mt20">Или выберите файл</h3>
-                <input class="form-control form-control-lg mt-3" name="file" type="file">
-    
-                <button type="submit" class="btn btn-success btn-lg mt-3">Отправить</button>
-            
-            </form>
+    <div class="header">
+        <div class="header__logo">Команда-2023</div>
+        <div class="header__nav nav">
+            <div class="header__nav-link"><a href="/case.html">Кейс</a></div>
+            <div class="header__nav-link "><a href="/main.html">О нас</a></div>
+        </div>
+        <div class="header__social">
+            <div class="header__social_link"><a href="https://github.com/UdalovPS/hacaton_08_2023"><i class="fa-brands fa-github"></i></a>
+            </div>
         </div>
     </div>
-    <div class="right">
+
+    <!-- -------------- main ------------------ -->
+    <div class="main">
+        <div class="left">
+            <div class="form">
+                <form id="upload-form" enctype="multipart/form-data">
+                    <h2>Кейс:</h2>
+                    <p>При помощи методов искусственного интеллекта и данных, включающих полные адреса домов и зданий г. Санкт-Петербурга необходимо построить модель, которая сможет адаптироваться к задачам определения корректного адреса, содержащегося в исходной базе данных.</p>
+                    <h3>Введите адрес</h3>
+                    <input class="form-control form-control-lg mt-3" type="text" name="textInput" autocomplete="off">
+                    <h3 class="mt20">Или выберите файл</h3>
+                    <input class="form-control form-control-lg mt-3" name="fileToUpload" id="fileToUpload" type="file" autocomplete="off">
+                    <button type="submit" class="btn btn-success btn-lg mt-3">Отправить</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="right">
+
+        </div>
+    </div>
+    <div id="output">
+        <h2>Output будет здесь:</h2>
+        <canvas id="bar-chart-horizontal"></canvas>
 
     </div>
-</div>
-
-
- <!-- ------------------ form --------------------- -->
- <!-- <div align='center' class="mt50 mb50">
-    <form action="" method="POST">
-        <input style="width: 300px;" type='text' placeholder='Введите адрес, который нужно исправить' value='Санкт-Петербург, Яхтеная у. 18-16-4'></input>
-        <input type='submit' value='Исправить адрес'>
-    </form>
-    </div> -->
-    <!-- ------------------ chart --------------------- -->
-
-    <!-- <canvas id="bar-chart-horizontal" max-width="400px" max-height="320px"></canvas>
-    <script>
-new Chart(document.getElementById("bar-chart-horizontal"), {
-    type: 'horizontalBar',
-    data: {
-      labels: ["Санкт-Петербург г., Яхтеная ул., 18 д., 16 к., 4 кв.",
-               "Санкт-Петербург г., Яхтеная ул., 18/16  4 кв.",
-               "СПБ, улица Яхтеная, 18-16-4 к",
-               "Санкт-Петербург, ул. Яхтеная, д. 18, кв. 16-4",
-               "Санкт-Петербург, Яхтеная ул., 18, кв. 16/4"],
-      datasets: [
-        {
-          label: "Предсказание",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          data: [0.97, 0.02, 0.005, 0.003, 0.001]
-        }
-      ]
-    },
-    options: {
-      legend: { display: false },
-      title: {
-        display: true,
-        text: 'Наиболее вероятные варианты корректировки адресов'
-      }
-    }
-});
-    </script> -->
-
-<script src="./script1.js"></script>
 
 </div>
+<script src='{% static "form.js" %}'></script>
 </body>
 </html>
