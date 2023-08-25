@@ -15,5 +15,5 @@ urlpatterns = [
     path("form/", FormView.as_view(), name='form'),
     path("contacts/", ContactsView.as_view(), name='contacts'),
     path("form-and-chart/", FormAndChartView.as_view(), name='form-and-chart'),
-    path("simple-page/", FormAndChartView.as_view(), name='simple-page'),
+    path("simple-page/", SimplePageView.as_view(), name='simple-page'),
 ]
