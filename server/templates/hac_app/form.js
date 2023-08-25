@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // console.log(formData.get('fileToUpload')); // выводит файл, загруженный в форму
        
         try {
-            const response = await fetch('/upload', {
+            const response = await fetch("/one-string/?format=json", {
                 method: 'POST',
                 body: formData
             });
