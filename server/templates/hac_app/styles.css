@@ -6,7 +6,8 @@
     width: 100%;
     min-height: 100vh;
     background-color: rgb(10, 0, 34);
-    background-image: url("/img/bg.png");
+    background-image: url("./img/bg.png");
+    
     background-repeat: no-repeat;
     background-size: cover;
 }
