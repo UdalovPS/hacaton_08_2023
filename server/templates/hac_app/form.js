@@ -5,13 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const form = document.getElementById('upload-form');
     const outputDiv = document.getElementById('output');
+    let table = document.querySelector('.table');
 
     form.addEventListener('submit', async function(event) {
         console.log('submit');
         event.preventDefault();
 
         const formData = new FormData(form);
-       
+        const textInput = formData.get('textInput');
+        if (textInput.trim().length < 4){
+            console.error('запрос короче 4 символов');
+            table.textContent = 'Слишком короткий запрос, введите минимум 4 символа';
+        } else {
             // console.log(formData.get('textInput'));  //выводит текст из текстового поля формы
             // console.log(formData.get('fileToUpload')); // выводит файл, загруженный в форму
        
@@ -31,10 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // ------------- формируем таблицу -------------
         
-                let table = document.querySelector('.table');
+               
                 let tableHeaders = `
                         <div class="row">
-                            <h4 style="display: inline">Адрес, который вы ввели - ${formData.get('textInput')}</h4>
+                            <h4 style="display: inline">Адрес, который вы ввели - ${textInput}</h4>
                            
                             <hr>
                         </div>
@@ -114,5 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         document.getElementById("bar-chart-horizontal").classList.add('canvas_active');
         document.querySelector('.body').classList.add('pb100');
+    }
     });
 });
