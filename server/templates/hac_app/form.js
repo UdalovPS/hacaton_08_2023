@@ -15,8 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // console.log(formData.get('textInput'));  //выводит текст из текстового поля формы
             // console.log(formData.get('fileToUpload')); // выводит файл, загруженный в форму
        
+            // "/req-file/?format=json"
+            // "/one-string/?format=json"
         try {
-            const response = await fetch("/one-string/?format=json", {
+            const response = await fetch("/req-file/?format=json", {
                 method: 'POST',
                 body: formData
             });
