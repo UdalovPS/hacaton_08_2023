@@ -48,6 +48,17 @@ P{
     width: 50%;
     margin-left: 100px;
 }
+.hidden{
+    display: none;
+    visibility: none; 
+    padding: 0; 
+    margin: 0;
+}
+#fileName{
+    font-size: 18px;
+    color: #ffffff;
+    margin-left: 10px;
+}
 .case{
     margin-left: 100px;
     width: 50%;
@@ -163,7 +174,4 @@ margin-top: 50px;
     border-bottom: 2px solid #ffffff;
 }
 
-.active {
-    
-    border-bottom: 2px solid #ffffff;
-}
+

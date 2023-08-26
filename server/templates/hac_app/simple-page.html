@@ -43,21 +43,32 @@
             <div class="form">
                  
                 <form id="upload-form" enctype="multipart/form-data">
-                    
                     <h3>Введите адрес</h3>
+                    <p id="short-message"></p>
                     <input class="form-control form-control-lg mt-3" type="text" name="textInput" >
-                    <!-- <h3 class="mt20">Или выберите файл</h3>
-                    <input class="form-control form-control-lg mt-3" name="fileToUpload" id="fileToUpload" type="file" >
-                    -->
                     <button type="submit" class="btn btn-success btn-lg mt-3">Исправить</button>
                     <!-- <input type="submit" value="Загрузить"> -->
                 </form>
+                <form id="upload-file">
+                    <h3 class="mt20">Или выберите файл</h3>
+                    <!-- <input class="form-control form-control-lg mt-3" name="fileToUpload" id="fileToUpload" type="file" > -->
+                    <input class="hidden" name="fileToUpload" id="fileToUpload" type="file" >
+                    <button type="submit" id = "file-choose-button" class=" form-control-sm mt-3">Выбрать файл</button>
+                    <span id="fileName">Файл не выбран</span><br>
+                    <button type="submit" id = "file-send-button"class="btn btn-success btn-lg mt-3">Отправить</button>
+
+                </form>
+                
             </div>
+           
+           
         </div>
 
         <div class="right">
+            
         </div>
     </div>
+    <!-- --------------- поле для вывода таблицы -------------- -->
     <div class="table"></div>
     <!-- -------------- output ----------- -->
     <div id="output" class="invisible">
