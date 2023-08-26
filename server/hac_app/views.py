@@ -129,6 +129,7 @@ class ReqFileView(APIView):
 
 class DownloadView(APIView):
     def get(self, request):
+        print(os.getcwd())
         file_path = f"{os.getcwd()}/hac_app/data/"
         file_name = "test.txt"
         full_path = file_path + file_name
