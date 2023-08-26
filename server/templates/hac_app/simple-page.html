@@ -40,20 +40,26 @@
             <h2>Кейс:</h2>
             <p>При помощи методов искусственного интеллекта и данных, включающих полные адреса домов и зданий г. Санкт-Петербурга необходимо построить модель, которая сможет адаптироваться к задачам определения корректного адреса, содержащегося в исходной базе данных.</p>
         </div>
+        <div class="tabs">
+            <span class="tab tab_active">Текст</span>
+            <span class="tab">Файл</span>
+           
+        </div>
+       
             <div class="form">
-                 
-                <form id="upload-form" enctype="multipart/form-data">
+                
+                <form id="upload-form"  enctype="multipart/form-data">
                     <h3>Введите адрес</h3>
                     <p id="short-message"></p>
                     <input class="form-control form-control-lg mt-3" type="text" name="textInput" >
                     <button type="submit" class="btn btn-success btn-lg mt-3">Исправить</button>
                     <!-- <input type="submit" value="Загрузить"> -->
                 </form>
-                <form id="upload-file">
-                    <h3 class="mt20">Или выберите файл</h3>
+                <form id="upload-file" class="hidden">
+                    <h3>Выберите файл</h3>
                     <!-- <input class="form-control form-control-lg mt-3" name="fileToUpload" id="fileToUpload" type="file" > -->
                     <input class="hidden" name="fileToUpload" id="fileToUpload" type="file" >
-                    <button type="submit" id = "file-choose-button" class=" form-control-sm mt-3">Выбрать файл</button>
+                    <button type="submit" id = "file-choose-button" class=" btn btn-light form-control-sm mt-3">Выбрать файл</button>
                     <span id="fileName">Файл не выбран</span><br>
                     <button type="submit" id = "file-send-button"class="btn btn-success btn-lg mt-3">Отправить</button>
 

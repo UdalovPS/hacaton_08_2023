@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <h4 style="display: inline">Адрес ссылки на скачивание - ${data}</h4>
                                 <hr>
                              </div>
-                             <a href="https://www.w3schools.com/images/myw3schoolsimage.jpg"class="download-button btn btn-primary btn-lg mt-3" download>Скачать <i class="fa fa-download"></i></a>
+                             <a href="${data}" class="download-button btn btn-primary btn-lg mt-3" download>Скачать <i class="fa fa-download"></i></a>
                             ` ;
                 table.innerHTML = html;
                 
@@ -183,5 +183,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
     });
+    // Переключение табов
+    const tabs = document.querySelector('.tabs');
+    const allTab = document.querySelectorAll('.tab');
+    console.log(allTab);
 
+   tabs.addEventListener('click', (e) => {
+        e.preventDefault();
+        form1.reset();
+        form2.reset();
+        console.log(e.target);
+        allTab.forEach(el => {
+            el.classList.toggle('tab_active');
+        })
+        document.querySelectorAll('form').forEach(el => {
+            el.classList.toggle('hidden');
+        })
+        // allTab.classList.toggle('tab_active');
+   });
 });
