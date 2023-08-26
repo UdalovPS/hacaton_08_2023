@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const fileSendButton = document.getElementById('file-send-button');
     const outputDiv = document.getElementById('output');
     const table = document.querySelector('.table');
+    const fileName = document.getElementById('fileName');
+    const tabs = document.querySelector('.tabs');
+    const allTab = document.querySelectorAll('.tab');
 
     // Отправлка текста на сервер
     form1.addEventListener('submit', async function(event) {
@@ -139,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
      form2.addEventListener('submit', async function(event) {
         console.log('submit');
         event.preventDefault();
+        fileName.textContent = '';
         // console.log('sending';
         const formData = new FormData(form2);
         try {
@@ -183,22 +187,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
     });
+    
+   
     // Переключение табов
-    const tabs = document.querySelector('.tabs');
-    const allTab = document.querySelectorAll('.tab');
-    console.log(allTab);
-
-   tabs.addEventListener('click', (e) => {
+    tabs.addEventListener('click', (e) => {
+      
         e.preventDefault();
         form1.reset();
         form2.reset();
+        fileName.textContent = '';
         console.log(e.target);
         allTab.forEach(el => {
             el.classList.toggle('tab_active');
         })
         document.querySelectorAll('form').forEach(el => {
             el.classList.toggle('hidden');
-        })
-        // allTab.classList.toggle('tab_active');
+        });
+
    });
 });
