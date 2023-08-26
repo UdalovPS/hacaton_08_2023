@@ -1,6 +1,7 @@
 console.log('hi from form.js');
 
 document.addEventListener('DOMContentLoaded', function() {
+    let body = document.querySelector('.body');
     const form1 = document.getElementById('upload-form');
     const form2 = document.getElementById('upload-file');
     const file = document.getElementById('fileToUpload');
@@ -154,14 +155,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 let html =  `<div class="row">
                                 <h4 style="display: inline">Адрес ссылки на скачивание - ${data}</h4>
                                 <hr>
-                             </div>`;
+                             </div>
+                             <a href="https://www.w3schools.com/images/myw3schoolsimage.jpg"class="download-button btn btn-primary btn-lg mt-3" download>Скачать <i class="fa fa-download"></i></a>
+                            ` ;
                 table.innerHTML = html;
                 
-                // table.textContent = data;
+                const downloadButton = document.querySelector('.download-button');
+                console.log(downloadButton);
+                // downloadButton.addEventListener('click', e=> {
+                //     console.log('click');
+                //     window.location.href = data;
+                //     console.log(window.location.href);
+                // })
                 table.style.fontSize="28px";
                 table.style.fontWeight=800;
                 table.style.color= "rgb(99, 99, 99)";
                 table.style.padding="70px";
+                body.style.paddingBottom="100px";
                 
 
             } else {
