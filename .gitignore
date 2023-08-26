@@ -25,7 +25,7 @@ wheels/
 .installed.cfg
 *.egg
 test_dataset/
-./server/templates/hac_app/additional_data/
+server/hac_app/migrations*
 
 telebot/test.py
 
@@ -114,6 +114,6 @@ media/
 # Ignore Django Migrations in Development if you are working on team
 
 # Only for Development only
-# **/migrations/**
+ **/migrations/**
 # !**/migrations
 # !**/migrations/__init__.py

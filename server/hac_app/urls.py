@@ -18,4 +18,5 @@ urlpatterns = [
     path("simple-page/", SimplePageView.as_view(), name='simple-page'),
     path("one-string/", OneStringView.as_view(), name='one-string'),
     path("req-file/", ReqFileView.as_view(), name='one-string'),
+    path("download/", DownloadView.as_view(), name='download'),
 ]

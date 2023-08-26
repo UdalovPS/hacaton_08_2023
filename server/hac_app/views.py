@@ -2,9 +2,10 @@ from rest_framework.renderers import TemplateHTMLRenderer, JSONRenderer
 from rest_framework.response import Response
 from rest_framework.request import Request
 from rest_framework.views import APIView
+from django.http import HttpResponse, FileResponse
 
 import csv
-
+import os
 
 class AboutView(APIView):
     renderer_classes = [TemplateHTMLRenderer, JSONRenderer]
@@ -17,9 +18,7 @@ class AboutView(APIView):
         }
         return Response(data)
 
-"""
-simple-page.html
-"""
+
 class IndexView(APIView):
     renderer_classes = [TemplateHTMLRenderer, JSONRenderer]
     template_name = "hac_app/index.html"
@@ -126,3 +125,13 @@ class ReqFileView(APIView):
         reader = csv.DictReader(decoded_file)
         data = ['url will be here!!!']
         return Response(data)
+
+
+class DownloadView(APIView):
+    def get(self, request):
+        file_path = f"{os.getcwd()}/hac_app/data/"
+        file_name = "test.txt"
+        full_path = file_path + file_name
+        responce = FileResponse(open(full_path, "rb"), as_attachment=True)
+        return responce
+
