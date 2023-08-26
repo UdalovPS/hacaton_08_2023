@@ -14,11 +14,19 @@ SERVER_URL = 'http://127.0.0.1:8000/'       #url адрес сервера на 
 async def descripte_address(message: types.Message):
     """
     Данный обработчик принимает от пользователя сообщение с некорректным адресом,
-        отправляет его API через
-    :param message:
-    :return:
+        отправляет его в API и в ответ получает JSON массив с корректным набором данных
     """
-    await message.answer(text='Выберите действие', reply_markup=keyboard)
+    data = {'textInput': message.text}
+    if len(data['textInput']) <= 3:
+        await message.answer(text="Слишком короткий адрес")
+    else:
+        responce = requests.post(url=SERVER_URL + "one-string/", data=data)
+        n = 1
+        res_str = ''
+        for item in responce.json():
+            res_str += f"{n}){item['address']} -> <b>{item['value']}</b>\n"
+            n += 1
+        await message.answer(text=res_str)
 
 
 if __name__ == '__main__':
