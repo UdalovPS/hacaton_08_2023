@@ -38,17 +38,18 @@ P{
 .left{
     width: 75%;
     padding-top: 100px;
+    padding-left: 100px;
     /* background: green; */
     /* min-width: 500px; */
     /* border: 5px solid white; */
 }
 .form {
-    background-color: #ffffff00;
-    /* padding: 50px; */
+    background-color: #b1b1b143;
+    padding: 30px;
     border-radius: 10px;
     color: black;
     width: 50%;
-    margin-left: 100px;
+    /* margin-left: 100px; */
 }
 .hidden{
     display: none;
@@ -62,7 +63,7 @@ P{
     margin-left: 10px;
 }
 .case{
-    margin-left: 100px;
+    /* margin-left: 100px; */
     width: 50%;
 }
 .right {
@@ -84,6 +85,28 @@ P{
     max-height: 500px;
     background: rgba(255, 255, 255, 0);
 } */
+.tabs{
+    
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+    /* background: rgb(255, 255, 255); */
+    width: 25%;
+    font-size: 20px;
+}
+.tab{
+    cursor: pointer;
+    min-width: 50%;
+    padding: 0;
+    margin: 0;
+    margin-right: 50px;
+    text-align: center;
+    color: white;
+    /* background: gray; */
+}
+.tab_active{
+    border-bottom: 1px solid #ffffff;
+}
 
 .canvas_active{
     margin: 0 auto;
