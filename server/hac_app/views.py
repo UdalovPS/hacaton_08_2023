@@ -123,7 +123,7 @@ class ReqFileView(APIView):
         file = request.FILES['fileToUpload']
         decoded_file = file.read().decode('utf-8').splitlines()
         reader = csv.DictReader(decoded_file)
-        data = ['url will be here!!!']
+        data = ['http://localhost:8000/download/']
         return Response(data)
 
 
