@@ -38,7 +38,9 @@ P{
 .left{
     width: 75%;
     padding-top: 100px;
+    /* background: green; */
     /* min-width: 500px; */
+    /* border: 5px solid white; */
 }
 .form {
     background-color: #ffffff00;
