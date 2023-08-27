@@ -23,4 +23,5 @@ urlpatterns = [
     path("req-file/", ReqFileView.as_view(), name='one-string'),
     path("download/", DownloadView.as_view(), name='download'),
 ]
-urlpatterns += staticfiles_urlpatterns()
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
