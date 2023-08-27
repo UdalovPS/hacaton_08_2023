@@ -159,24 +159,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 form2.reset(); // Сбрасываем форму
                 // рисуем кнопку со ссылкой
                 let html =  `<div class="row">
-                                <h4 style="display: inline">Адрес ссылки на скачивание - ${data}</h4>
+                                <h4 style="display: inline">Нажмите на кнопку, чтобы скачать файл</h4>
                                 <hr>
                              </div>
                              <a href="${data}" class="download-button btn btn-primary btn-lg mt-3" download>Скачать <i class="fa fa-download"></i></a>
                             ` ;
                 table.innerHTML = html;
+                console.log('сгенерировали кнопку со ссылкой');
                 
                 const downloadButton = document.querySelector('.download-button');
                 console.log(downloadButton);
-                // downloadButton.addEventListener('click', e=> {
-                //     console.log('click');
-                //     window.location.href = data;
-                //     console.log(window.location.href);
-                // })
+            
                 table.style.fontSize="28px";
                 table.style.fontWeight=800;
                 table.style.color= "rgb(99, 99, 99)";
-                // table.style.padding="70px";
                 body.style.paddingBottom="100px";
                 table.classList.remove('invisible');
                 
