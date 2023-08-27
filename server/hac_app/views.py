@@ -211,6 +211,7 @@ class OneStringView(APIView):
 class ReqFileView(APIView):
     def post(self, request: Request) -> Response:
         file = request.FILES['fileToUpload']
+<<<<<<< HEAD
         df = pd.read_csv(file, header=None)
         #print(df)
 
@@ -230,6 +231,15 @@ class ReqFileView(APIView):
         #decoded_file = file.read().decode('utf-8').splitlines()
         #print(decoded_file[:3])
         #reader = csv.DictReader(decoded_file)
+=======
+        decoded_file = file.read().decode('utf-8').splitlines()
+        reader = csv.DictReader(decoded_file)
+        # file_path = f"{os.getcwd()}/hac_app/data/"
+        # file_name = "test.txt"
+        # full_path = file_path + file_name
+        # responce = FileResponse(open(full_path, "rb"), as_attachment=True)
+        # return responce
+>>>>>>> 727de8775fdf7d9d55d7694612865ea5bb5fb93d
         data = ['http://localhost:8000/download/']
         return Response(data)
 

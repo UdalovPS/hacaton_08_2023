@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<body>
+    <div align='center'>
+    <form action="" method="POST">
+        <input style="width: 300px;" type='text' placeholder='Введите адрес, который нужно исправить' value='Санкт-Петербург, Яхтеная у. 18-16-4'></input>
+        <input type='submit' value='Исправить адрес'>
+    </form>
+    </div>
+
+    <canvas id="bar-chart-horizontal" width="400px" height="320px"></canvas>
+    <script>
+new Chart(document.getElementById("bar-chart-horizontal"), {
+    type: 'horizontalBar',
+    data: {
+      labels: ["Санкт-Петербург г., Яхтеная ул., 18 д., 16 к., 4 кв.",
+               "Санкт-Петербург г., Яхтеная ул., 18/16  4 кв.",
+               "СПБ, улица Яхтеная, 18-16-4 к",
+               "Санкт-Петербург, ул. Яхтеная, д. 18, кв. 16-4",
+               "Санкт-Петербург, Яхтеная ул., 18, кв. 16/4"],
+      datasets: [
+        {
+          label: "Предсказание",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [0.97, 0.02, 0.005, 0.003, 0.001]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Наиболее вероятные варианты корректировки адресов'
+      }
+    }
+});
+    </script>
+</body>
+</html>

@@ -25,7 +25,7 @@ SECRET_KEY = 'n!01)6js=&dja+=k#7*qw5relq0avn8xujvv@h0=v1xcyedj1f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["192.168.0.7", "192.168.0.3", "212.109.195.150", "localhost"]
 
 
 # Application definition
@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    
     'hac_app',
 ]
+
+#'django.contrib.staticfiles',
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -120,12 +121,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
 
 REST_FRAMEWORKS = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
 }
 
+STATIC_URL = '/static/'
+STATIC_PATH = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "templates/hac_app")]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 ITEMS_DATA = os.path.join(BASE_DIR, "./hac_app/data")
