@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
                 
                     let tableHeaders = `
-                            <div class="row">
+                            <div class="row ">
                                 <h4 style="display: inline">Адрес, который вы ввели - ${textInput}</h4>
                             
                                 <hr>
                             </div>
-                            <div class="row">
+                            <div class="row table-header">
                             <div class="col-l">
                                 Исправленные адреса:
                             </div>
@@ -74,7 +74,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>`)
                     });
                     table.innerHTML = tableHeaders + tableContent.join('');
-                    table.style.padding="70px";
+                    // table.style.padding="70px";
+                    table.classList.remove('invisible');
+                    // table.classList.add('some-class');
                     
                     // ------------ вывод графика ------------
                     // let myCanv = document.querySelector('canvas');
@@ -174,8 +176,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 table.style.fontSize="28px";
                 table.style.fontWeight=800;
                 table.style.color= "rgb(99, 99, 99)";
-                table.style.padding="70px";
+                // table.style.padding="70px";
                 body.style.paddingBottom="100px";
+                table.classList.remove('invisible');
                 
 
             } else {
