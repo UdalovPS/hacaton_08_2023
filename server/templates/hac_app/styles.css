@@ -305,6 +305,11 @@ margin-top: 50px;
     }
 }
 @media all and (max-width: 800px) { 
+    .tabs{
+        width: 50%;
+
+    }
+
     .body{
         padding: 10px;
     }
