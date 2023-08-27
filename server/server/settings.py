@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n!01)6js=&dja+=k#7*qw5relq0avn8xujvv@h0=v1xcyedj1f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["192.168.0.7", "192.168.0.3", "212.109.195.150"]
 
 
 # Application definition
@@ -36,11 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'rest_framework',
     
     'hac_app',
 ]
+
+#'django.contrib.staticfiles',
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -127,5 +128,6 @@ REST_FRAMEWORKS = {
     "PAGE_SIZE": 10,
 }
 
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "templates/hac_app")]
 ITEMS_DATA = os.path.join(BASE_DIR, "./hac_app/data")

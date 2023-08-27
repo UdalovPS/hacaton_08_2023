@@ -26,6 +26,7 @@ wheels/
 *.egg
 test_dataset/
 server/hac_app/migrations*
+other_data
 
 telebot/test.py
 

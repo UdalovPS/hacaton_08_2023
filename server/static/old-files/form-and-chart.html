@@ -1,0 +1,41 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <link rel="stylesheet" href='{% static "styles.css" %}'>
+
+<style>
+    .canvas{
+        max-width: 1200px;
+        max-height: 700px;
+    }
+</style>
+    <title>Загрузка файла</title>
+</head>
+<body>
+    <!-- -------- форма для ввода текста или файла ---------- -->
+
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="text" name="textInput" placeholder="Введите текст сюда" autocomplete="off">
+        <br><br>
+        <input type="file" name="fileToUpload" id="fileToUpload" autocomplete="off">
+        <input type="submit" value="Загрузить">
+    </form>
+    <br><br>
+    <div class="output" id="output"></div>
+
+    <!-- -------- canvas для вывода графика ---------- -->
+    <div class="canvas" >
+        <canvas id="bar-chart-horizontal" ></canvas>
+    </div>
+
+
+    <script src='{% static "form.js" %}'></script>
+
+</body>
+</html>

@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from .views import *
 
@@ -7,7 +9,7 @@ app_name = 'hac_app'
 
 urlpatterns = [
     path("about/", AboutView.as_view(), name='about'),
-    path("index/", IndexView.as_view(), name='index'),
+    path("", IndexView.as_view(), name='index'),
     path("main/", MainView.as_view(), name='main'),
     path("header/", HeaderView.as_view(), name='header'),
     path("footer/", FooterView.as_view(), name='footer'),
@@ -19,4 +21,4 @@ urlpatterns = [
     path("one-string/", OneStringView.as_view(), name='one-string'),
     path("req-file/", ReqFileView.as_view(), name='one-string'),
     path("download/", DownloadView.as_view(), name='download'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

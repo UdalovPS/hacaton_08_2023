@@ -125,6 +125,11 @@ class ReqFileView(APIView):
         file = request.FILES['fileToUpload']
         decoded_file = file.read().decode('utf-8').splitlines()
         reader = csv.DictReader(decoded_file)
+        # file_path = f"{os.getcwd()}/hac_app/data/"
+        # file_name = "test.txt"
+        # full_path = file_path + file_name
+        # responce = FileResponse(open(full_path, "rb"), as_attachment=True)
+        # return responce
         data = ['http://localhost:8000/download/']
         return Response(data)
 
