@@ -93,6 +93,8 @@ class SimplePageView(APIView):
 
 class OneStringView(APIView):
     def post(self, request: Request) -> Response:
+        text = request.POST['textInput']
+        print("TEXT:", text)
         data = [
             {
               "address": "ул.Ленина, д. 25",
@@ -130,7 +132,7 @@ class ReqFileView(APIView):
 class DownloadView(APIView):
     def get(self, request):
         print(os.getcwd())
-        file_path = f"{os.getcwd()}/server/hac_app/data/"
+        file_path = f"{os.getcwd()}/hac_app/data/"
         file_name = "test.txt"
         full_path = file_path + file_name
         responce = FileResponse(open(full_path, "rb"), as_attachment=True)

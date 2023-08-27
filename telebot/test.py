@@ -6,7 +6,7 @@ url = 'http://localhost:8000/one-string/?format=json'
 # data = response.json()
 # print("Type of request: ", type(data), "Data: ", data)
 
-text = {'textinput': 'test_text'}
+text = {'textInput': 'test_text'}
 response = requests.post(url, data=text)
 print(response.json())
 
