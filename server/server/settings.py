@@ -127,8 +127,8 @@ REST_FRAMEWORKS = {
     "PAGE_SIZE": 10,
 }
 
-STATIC_URL = '/static/'
-STATIC_PATH = os.path.join(BASE_DIR,'static')
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATIC_URL = '/static/'
+# STATIC_PATH = os.path.join(BASE_DIR,'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "templates/hac_app")]
 ITEMS_DATA = os.path.join(BASE_DIR, "./hac_app/data")
